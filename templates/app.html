@@ -1,0 +1,246 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sentiment App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body style="margin:0%; padding: 0%; background: url('https://images.pexels.com/photos/11744/pexels-photo-11744.jpeg?cs=srgb&dl=desktop-backgrounds-desktop-wallpaper-fence-11744.jpg'); background-size: cover; ">
+    
+    <div class="container" style="margin-top: 20vh; border-radius: 24px; background: rgba(134, 64, 6, 0.4); height: 500px; padding: 10px;">
+        <h1>Sentiment Analysis App - <small>Django Web Framework</small></h1>
+        <h3>Application of Natural Language Processing</h3>
+        <br>
+        <form method="POST" class="form-group">
+            {% csrf_token %}
+            <!--{{form.as_p}}-->
+            <p style="font-size:25px; font-family: sans-serif; ">Enter sentence to analyse</p>
+            {{form.Sentence}}
+            <br>
+            <button class="btn btn-warning form-control" type="submit">Submit</button>
+        </form>
+        <h1 style="font-family: sans-serif; font-size: 25px;">Result</h1>
+        {% if text == 'Positive' %}
+        <div class="positive" style="background-color: green; width: 100px; border-radius: 24px; padding: 12px; color: white; text-align: center;">
+            Positive
+        </div>
+        {% elif text == 'Negative' %}
+        <div class="negative" style="background-color: red; width: 100px; border-radius: 24px; padding: 12px; color: white">
+            Negative
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html> {% endcomment %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.79.0" />
+    <title>Django Sentiment · Bootstrap v5.0</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.0/examples/album/"
+    />
+
+    <!-- Bootstrap core CSS -->
+    <link
+      href="/docs/5.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      href="/docs/5.0/assets/img/favicons/apple-touch-icon.png"
+      sizes="180x180"
+    />
+    <link
+      rel="icon"
+      href="/docs/5.0/assets/img/favicons/favicon-32x32.png"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="/docs/5.0/assets/img/favicons/favicon-16x16.png"
+      sizes="16x16"
+      type="image/png"
+    />
+    <link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json" />
+    <link
+      rel="mask-icon"
+      href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg"
+      color="#7952b3"
+    />
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico" />
+    <meta name="theme-color" content="#7952b3" />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">
+                Django helps us create web apps very easily, so deos the
+                Bootstrap
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <strong>Django Sentiment App</strong>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarHeader"
+            aria-controls="navbarHeader"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Sentiment App</h1>
+            <p class="lead text-muted">
+              This web-app is built on Django, a Python framework. 
+            </p>
+            <form method="POST">
+              {% csrf_token %}
+              <label for="exampleFormControlTextarea1" class="form-label">Paste the review below</label>
+              <div class="mb-3">
+                {{form.Sentence}}
+              </div>
+                 <button type="submit" class="btn btn-primary mb-3">
+                Submit
+              </button>
+            </form>
+
+                  {% if text == 'Positive' %}
+                    <div class="alert alert-primary" role="alert">
+                    The reveiw is positive!
+                    </div>
+                 {% elif text == 'Negative' %}
+                    <div class="alert alert-danger" role="alert">
+                    The review is negative!
+                    </div>
+                {% endif %}
+          </div>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for city_weather in weather_data %}
+            <div class="col">
+              <div class="card shadow-sm">
+                <img
+                  width="40%"
+                  height="100"
+                  src="http://openweathermap.org/img/w/{{ city_weather.icon }}"
+                  alt="Image"
+                />
+                <div class="card-body">
+                  <h3>{{ city_weather.city }}</h3>
+                  <p class="card-text">
+                    {{ city_weather.description }}
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="btn-group">
+                      <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                      >
+                        {{ city_weather.temperature }}° F
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="text-muted py-5">
+      <div class="container">
+        <p class="float-end mb-1">
+          <a href="#">Back to top</a>
+        </p>
+        <p class="mb-2">
+          This site is built on Django with bootstrap5
+        </p>
+      </div>
+    </footer>
+
+    <script
+      src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+      integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
